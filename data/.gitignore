@@ -1,0 +1,6 @@
+# Ignore all data files by default
+*
+
+# But keep the directory structure
+!.gitignore
+!README.md
