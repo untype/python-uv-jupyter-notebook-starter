@@ -2,6 +2,109 @@
 
 A Python development environment using [UV](https://github.com/astral-sh/uv) for fast, reliable package management with an integrated Jupyter notebook.
 
+## Quick Start Guide
+
+### Option 1: Clone This Repository (Recommended)
+
+If you're setting up this workspace on a new PC:
+
+1. **Clone the repository**
+   ```powershell
+   git clone https://github.com/untype/python-uv-jupyter-notebook-starter.git
+   cd python-uv-jupyter-notebook-starter
+   ```
+
+2. **Install UV** (if not already installed)
+   ```powershell
+   # Windows PowerShell
+   irm https://astral.sh/uv/install.ps1 | iex
+   ```
+
+3. **Create virtual environment**
+   ```powershell
+   uv venv
+   ```
+
+4. **Install dependencies**
+   ```powershell
+   uv sync
+   ```
+
+5. **Open in VS Code**
+   ```powershell
+   code .
+   ```
+
+6. **Select Python interpreter**
+   - Press `Ctrl+Shift+P`
+   - Type "Python: Select Interpreter"
+   - Choose the interpreter from `.venv`
+
+7. **Start working!**
+   - Open `notebook.ipynb`
+   - Place your datasets in `data/raw/`
+   - Begin your analysis
+
+### Option 2: Create New Project from Scratch
+
+To create a brand new project based on this template:
+
+1. **Create and navigate to your project directory**
+   ```powershell
+   mkdir my-analysis-project
+   cd my-analysis-project
+   ```
+
+2. **Initialize UV project**
+   ```powershell
+   uv init --name my-analysis-project .
+   ```
+
+3. **Create virtual environment**
+   ```powershell
+   uv venv
+   ```
+
+4. **Install Jupyter dependencies**
+   ```powershell
+   uv add jupyter ipykernel
+   ```
+
+5. **Create data directories**
+   ```powershell
+   mkdir -p data/raw, data/processed, data/external
+   ```
+
+6. **Initialize git repository**
+   ```powershell
+   git init
+   git add .
+   git commit -m "Initial commit: Setup Python UV Jupyter workspace"
+   ```
+
+7. **Create GitHub repository** (choose one method):
+   
+   **Method A: Using GitHub CLI**
+   ```powershell
+   gh repo create my-analysis-project --public --source=. --remote=origin --push
+   ```
+   
+   **Method B: Using VS Code**
+   - Press `Ctrl+Shift+P`
+   - Type "Publish to GitHub"
+   - Follow the prompts
+   
+   **Method C: Manual GitHub setup**
+   - Go to https://github.com/new
+   - Create repository named `my-analysis-project`
+   - Don't initialize with README
+   - Then run:
+     ```powershell
+     git remote add origin https://github.com/YOUR_USERNAME/my-analysis-project.git
+     git branch -M main
+     git push -u origin main
+     ```
+
 ## Project Structure
 
 ```
@@ -19,30 +122,16 @@ A Python development environment using [UV](https://github.com/astral-sh/uv) for
 └── README.md                     # This file
 ```
 
-## Getting Started
-
-### Prerequisites
-
-- Python 3.13.7 (or compatible version)
-- UV package manager installed
-
-### Setup
-
-The environment is already set up with:
-- Virtual environment created in `.venv/`
-- Jupyter and IPython kernel installed
-- VS Code Python and Jupyter extensions configured
+## Working with the Environment
 
 ### Using the Notebook
 
 1. Open `notebook.ipynb` in VS Code
-2. Select the Python kernel from `.venv/`
+2. Select the Python kernel from `.venv/` (if not already selected)
 3. Place your datasets in `data/raw/`
 4. Start coding and running cells interactively
 
-### Working with Data
-
-Place your datasets in the appropriate directory:
+### Managing Data
 - **Original data** → `data/raw/` (never modify these files)
 - **Cleaned data** → `data/processed/`
 - **External data** → `data/external/`
