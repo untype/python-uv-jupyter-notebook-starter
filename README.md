@@ -10,8 +10,8 @@ If you're setting up this workspace on a new PC:
 
 1. **Clone the repository**
    ```powershell
-   git clone https://github.com/untype/python-uv-jupyter-notebook-starter.git
-   cd python-uv-jupyter-notebook-starter
+   git clone https://github.com/untype/py-uv-jupnb-starter.git
+   cd py-uv-jupnb-starter
    ```
 
 2. **Install UV** (if not already installed)
